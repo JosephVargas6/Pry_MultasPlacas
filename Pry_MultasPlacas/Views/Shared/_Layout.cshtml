@@ -1,44 +1,85 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta Property="og:title" content="">
+    <meta Property="og:description" content="">
+    <meta Property="og:url" content="">
+    <meta Property="og:image" content="images/imagen.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="files/favicon.ico">  
+            @Styles.Render("~/Content/css")
+            @RenderSection("CssPersonalizado",false)
+    <title>APUNTA LA PLACA</title>
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+
+<body class="bg-gradient">
+    @*<div class="loader">
+        <img src="@Url.Content("~/Images/loader.svg")" class="loader_img">
+    </div>*@
+    <div class="col-xs-12 col-sm-12 col-md-2 nav_lateral hidden-xs hidden-sm">
+        <div class="col-md-12 nav_logo">
+            <img src="@Url.Content("~/Images/logo.jpg")" style="width:100%;">
         </div>
+        <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="margin-top: 47% !important;">
+            <ul class="col-md-12 nav navbar-nav" style="padding-right:0px">
+                Apunta la Placa
+            </ul>
+        </div>
+        <div class="col-md-12" style="position: absolute;bottom: 18px;left: 0px;">
+
+        </div>
+
+        @*<div class="col-md-12 nav_logo">
+                <img src="@Url.Content("~/Images/logo_lateral.jpg")" style="width:100%;">
+            </div>*@
+            @*<div class="col-md-12 nav_list">
+                <ul>
+                    @MvcHtmlString.Create(Model.usuario.getPerfilSelected.getMenusPage(False))
+                </ul>
+            </div>*@
+
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <div Class="col-xs-12 hidden-md hidden-lg">
+        <nav Class="navbar navbar-default navbar-fixed-top">
+            <div Class="container-fluid">
+                <div Class="navbar-header">
+                    <Button type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" Class="navbar-toggle collapsed">
+                        <span Class="sr-only">Toggle navigation</span>
+                        <span Class="icon-bar">
+                        </span>
+                        <span Class="icon-bar">
+                        </span>
+                        <span Class="icon-bar">
+                        </span>
+                    </Button> 
+                    <img src="@Url.Content("~/Images/logo.jpg")" style="width:28%;" Class="hidden-xs hidden-lg hidden-sm " >
+                    <img src="@Url.Content("~/Images/logo.jpg")" style="width:88px;" Class="hidden-md">
+                </div>
+            </div>
+        </nav>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/generalJS")
+    @RenderSection("scripts",false)
+
+
+
 </body>
+
+
+
+
+
 </html>
+
+
